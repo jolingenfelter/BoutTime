@@ -12,6 +12,8 @@
 		9E0E24531D3EBB3800D90F16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0E24511D3EBB3800D90F16 /* Main.storyboard */; };
 		9E0E24551D3EBB3800D90F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E0E24541D3EBB3800D90F16 /* Assets.xcassets */; };
 		9E0E24581D3EBB3800D90F16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0E24561D3EBB3800D90F16 /* LaunchScreen.storyboard */; };
+		9E0E24601D3ED8DD00D90F16 /* PixarEvents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E0E245F1D3ED8DD00D90F16 /* PixarEvents.plist */; };
+		9E0F69681D3FD53900808EDA /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F69671D3FD53900808EDA /* EventsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		9E0E24541D3EBB3800D90F16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E0E24571D3EBB3800D90F16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E0E24591D3EBB3800D90F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E0E245F1D3ED8DD00D90F16 /* PixarEvents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PixarEvents.plist; path = ../PixarEvents.plist; sourceTree = "<group>"; };
+		9E0F69671D3FD53900808EDA /* EventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				9E0E24541D3EBB3800D90F16 /* Assets.xcassets */,
 				9E0E24561D3EBB3800D90F16 /* LaunchScreen.storyboard */,
 				9E0E24591D3EBB3800D90F16 /* Info.plist */,
+				9E0E245F1D3ED8DD00D90F16 /* PixarEvents.plist */,
+				9E0F69671D3FD53900808EDA /* EventsModel.swift */,
 			);
 			path = BoutTime;
 			sourceTree = "<group>";
@@ -124,6 +130,7 @@
 			files = (
 				9E0E24581D3EBB3800D90F16 /* LaunchScreen.storyboard in Resources */,
 				9E0E24551D3EBB3800D90F16 /* Assets.xcassets in Resources */,
+				9E0E24601D3ED8DD00D90F16 /* PixarEvents.plist in Resources */,
 				9E0E24531D3EBB3800D90F16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E0E24501D3EBB3800D90F16 /* ViewController.swift in Sources */,
+				9E0F69681D3FD53900808EDA /* EventsModel.swift in Sources */,
 				9E0E244E1D3EBB3800D90F16 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +296,7 @@
 				9E0E245E1D3EBB3800D90F16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
