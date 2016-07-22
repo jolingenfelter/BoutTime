@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GameKit
 
 //Extension to randomize events for each round
 extension Array {
@@ -45,6 +44,7 @@ class ViewController: UIViewController {
     var indexOfEvent = 0
     var eventsList: [Event] = []
     var newQuizEvents: [Event] = []
+    var currentRoundEvents: [Event] = []
     
     //Labels
     @IBOutlet weak var event1Label: UILabel!
@@ -94,16 +94,39 @@ class ViewController: UIViewController {
         resetTimerAndButtons()
         beginTimer()
         
-        event1Label.text = newQuizEvents[0].event
-        event2Label.text = newQuizEvents[1].event
-        event3Label.text = newQuizEvents[2].event
-        event4Label.text = newQuizEvents[3].event
+        for i in 0...3 {
+            currentRoundEvents.append(newQuizEvents[i])
+        }
+        
+        event1Label.text = currentRoundEvents[0].event
+        event2Label.text = currentRoundEvents[1].event
+        event3Label.text = currentRoundEvents[2].event
+        event4Label.text = currentRoundEvents[3].event
     }
     
     func newRound() {
         newQuizEvents.shuffle
     }
     
+    @IBAction func moveUpOrDown(sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            swap(&event1Label.text, &event2Label.text)
+        case 2:
+            swap(&event2Label.text, &event1Label.text)
+        case 3:
+            swap(&event2Label.text, &event3Label.text)
+        case 4:
+            swap(&event3Label.text, &event2Label.text)
+        case 5:
+            swap(&event3Label.text, &event4Label.text)
+        case 6:
+            swap(&event4Label.text, &event3Label.text)
+        default:
+            break;
+        }
+    
+    }
     
     //Timer
     
