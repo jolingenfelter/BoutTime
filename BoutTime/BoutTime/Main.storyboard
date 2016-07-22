@@ -166,7 +166,7 @@
                         <outlet property="event2Label" destination="jHu-kT-VId" id="5uo-DO-Wf2"/>
                         <outlet property="event3Label" destination="gEJ-A3-e4t" id="UGI-Uy-Oao"/>
                         <outlet property="event4Label" destination="f3b-Jf-zaI" id="a5Z-L7-L9U"/>
-                        <outlet property="shakeToComplete" destination="wgF-EE-z6h" id="MhK-7I-cEz"/>
+                        <outlet property="instructions" destination="wgF-EE-z6h" id="SVH-wL-Qnf"/>
                         <outlet property="timerLabel" destination="tgb-dQ-G2t" id="qNG-Pp-3NO"/>
                         <outlet property="upButton1" destination="5ow-tx-9da" id="N5U-3J-n2x"/>
                         <outlet property="upButton2" destination="Kz7-X7-vZU" id="pmt-9n-5MX"/>

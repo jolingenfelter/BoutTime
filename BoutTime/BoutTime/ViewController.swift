@@ -7,6 +7,32 @@
 //
 
 import UIKit
+import GameKit
+
+extension Array {
+    var shuffle:[Element] {
+        var elements = self
+        for index in 0..<elements.count {
+            let newIndex = Int(arc4random_uniform(UInt32(elements.count-index)))+index
+            if index != newIndex {
+                swap(&elements[index], &elements[newIndex])
+            }
+        }
+        return elements
+    }
+    func groupOf(n:Int)-> [[Element]] {
+        var result:[[Element]]=[]
+        for i in 0...(count/n)-1 {
+            var tempArray:[Element] = []
+            for index in 0...n-1 {
+                tempArray.append(self[index+(i*n)])
+            }
+            result.append(tempArray)
+        }
+        
+        return result
+    }
+}
 
 class ViewController: UIViewController {
     
@@ -17,8 +43,7 @@ class ViewController: UIViewController {
     var totalNumberOfRounds = 6
     var indexOfEvent = 0
     var eventsList: [Event] = []
-    var currentRoundEvents: [Event] = []
-    var nextRoundEvents: [Event] = []
+    var newQuizEvents: [Event] = []
     
     //Labels
     @IBOutlet weak var event1Label: UILabel!
@@ -67,6 +92,11 @@ class ViewController: UIViewController {
         resetTimerAndButtons()
         beginTimer()
     }
+    
+    func newRound() {
+        newQuizEvents = eventsList.shuffle
+    }
+    
     
     //Timer
     
