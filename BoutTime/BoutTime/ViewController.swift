@@ -25,8 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var event2Label: UILabel!
     @IBOutlet weak var event3Label: UILabel!
     @IBOutlet weak var event4Label: UILabel!
-    @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var shakeToComplete: UILabel!
+    @IBOutlet weak var instructions: UILabel!
     
     
     //Buttons
@@ -36,6 +35,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var upButton2: UIButton!
     @IBOutlet weak var downButton3: UIButton!
     @IBOutlet weak var upButton3: UIButton!
+    
+    //Timer
+    @IBOutlet weak var timerLabel: UILabel!
+    var timer = NSTimer()
+    var time = 60
+    var timerRunning = false
     
     required init?(coder aDecoder: NSCoder) {
         do {
@@ -50,12 +55,48 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        displayRound()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func displayRound() {
+        resetTimerAndButtons()
+        beginTimer()
+    }
+    
+    //Timer
+    
+    func beginTimer() {
+        if timerRunning == false {
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.displayCountDown), userInfo: nil, repeats: true)
+            
+            timerRunning = true
+        }
+    }
+    
+    func displayCountDown() {
+        time -= 1
+        timerLabel.text = "0:\(time)"
+        
+        if time <= 5 {
+            timerLabel.textColor = UIColor.redColor()
+        }
+        
+        if time == 0 {
+            timer.invalidate()
+            instructions.text = "Time's up!"
+        }
+    }
+    
+    func resetTimerAndButtons() {
+        time = 60
+        timerLabel.text = "0:\(time)"
+        timerRunning = false
+        timerLabel.textColor = UIColor.whiteColor()
     }
 
 
