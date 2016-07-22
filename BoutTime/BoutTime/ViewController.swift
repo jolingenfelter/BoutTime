@@ -9,6 +9,7 @@
 import UIKit
 import GameKit
 
+//Extension to randomize events for each round
 extension Array {
     var shuffle:[Element] {
         var elements = self
@@ -80,6 +81,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        newQuizEvents = eventsList.shuffle
         displayRound()
     }
 
@@ -91,10 +93,15 @@ class ViewController: UIViewController {
     func displayRound() {
         resetTimerAndButtons()
         beginTimer()
+        
+        event1Label.text = newQuizEvents[0].event
+        event2Label.text = newQuizEvents[1].event
+        event3Label.text = newQuizEvents[2].event
+        event4Label.text = newQuizEvents[3].event
     }
     
     func newRound() {
-        newQuizEvents = eventsList.shuffle
+        newQuizEvents.shuffle
     }
     
     
