@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="Dl6-yW-rg5">
             <objects>
-                <viewController id="b08-N9-RnL" sceneMemberID="viewController">
+                <viewController id="b08-N9-RnL" customClass="ViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rdn-GN-0oI"/>
                         <viewControllerLayoutGuide type="bottom" id="fse-JQ-Z7K"/>
@@ -158,6 +158,20 @@
                             <constraint firstItem="jHu-kT-VId" firstAttribute="centerX" secondItem="pWy-CY-L8T" secondAttribute="centerX" id="zoU-RW-h6G"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="downButton1" destination="Y4o-DS-w1Y" id="YWa-wG-IG4"/>
+                        <outlet property="downButton2" destination="4im-Ls-ane" id="kra-ma-lDd"/>
+                        <outlet property="downButton3" destination="5Wi-Fe-mv2" id="5om-nX-y1m"/>
+                        <outlet property="event1Label" destination="8EJ-ra-lcf" id="XpX-v3-4nj"/>
+                        <outlet property="event2Label" destination="jHu-kT-VId" id="5uo-DO-Wf2"/>
+                        <outlet property="event3Label" destination="gEJ-A3-e4t" id="UGI-Uy-Oao"/>
+                        <outlet property="event4Label" destination="f3b-Jf-zaI" id="a5Z-L7-L9U"/>
+                        <outlet property="shakeToComplete" destination="wgF-EE-z6h" id="MhK-7I-cEz"/>
+                        <outlet property="timerLabel" destination="tgb-dQ-G2t" id="qNG-Pp-3NO"/>
+                        <outlet property="upButton1" destination="5ow-tx-9da" id="N5U-3J-n2x"/>
+                        <outlet property="upButton2" destination="Kz7-X7-vZU" id="pmt-9n-5MX"/>
+                        <outlet property="upButton3" destination="91e-fu-v4y" id="E50-Cq-j4J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pq8-S2-bz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

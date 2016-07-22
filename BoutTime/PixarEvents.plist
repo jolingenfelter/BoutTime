@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>fact1</key>
+<array>
 	<dict>
 		<key>event</key>
 		<string>George Lucas recruits EdCatmull to head Lucasfilm&apos;s Computer Division</string>
@@ -11,7 +10,6 @@
 		<key>url</key>
 		<string>http://www.pixar.com/about/Our-Story</string>
 	</dict>
-	<key>fact2</key>
 	<dict>
 		<key>event</key>
 		<string>John Lasseter becomes an Interface designer for Lucasfilm Computer Division </string>
@@ -20,7 +18,6 @@
 		<key>url</key>
 		<string>http://www.pixar.com/about/Our-Story</string>
 	</dict>
-	<key>fact3</key>
 	<dict>
 		<key>event</key>
 		<string>Steve Jobs purchases the Lucasfilm&apos;s Computer Graphics Division and establishes Pixar</string>
@@ -29,7 +26,6 @@
 		<key>url</key>
 		<string>http://www.pixar.com/about/Our-Story</string>
 	</dict>
-	<key>fact4</key>
 	<dict>
 		<key>event</key>
 		<string>Short film &quot;Red&apos;s Dream&quot; directed by John Lasseter premieres</string>
@@ -38,7 +34,6 @@
 		<key>url</key>
 		<string>http://www.pixar.com/about/Our-Story</string>
 	</dict>
-	<key>fact5</key>
 	<dict>
 		<key>event</key>
 		<string>Short film &quot;Knick Knack&quot; is completed.  It Pixar&apos;s first animaton produced in stereoscopic 3D.</string>
@@ -47,7 +42,6 @@
 		<key>url</key>
 		<string>http://www.pixar.com/about/Our-Story</string>
 	</dict>
-	<key>fact6</key>
 	<dict>
 		<key>event</key>
 		<string>Disney and Pixar announce an agreement to make and distribute at least one film together.</string>
@@ -56,7 +50,6 @@
 		<key>url</key>
 		<string>http://www.pixar.com/about/Our-Story</string>
 	</dict>
-	<key>fact7</key>
 	<dict>
 		<key>event</key>
 		<string>The world&apos;s first computer animated film, Toy Story, premieres</string>
@@ -65,7 +58,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Toy_Story</string>
 	</dict>
-	<key>fact8</key>
 	<dict>
 		<key>event</key>
 		<string>Short film, &quot;Geri&apos;s Game&quot;, premieres at Laemmle&apos;s Monica Theater in Santa Monica</string>
@@ -74,7 +66,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Geri%27s_Game</string>
 	</dict>
-	<key>fact9</key>
 	<dict>
 		<key>event</key>
 		<string>A Bugs Life premieres</string>
@@ -83,7 +74,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/A_Bug%27s_Life</string>
 	</dict>
-	<key>fact10</key>
 	<dict>
 		<key>event</key>
 		<string>Toy Story 2 breaks box-office opening weekend records in the United States, United Kingdom, and Japan</string>
@@ -92,7 +82,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Toy_Story_2</string>
 	</dict>
-	<key>fact11</key>
 	<dict>
 		<key>event</key>
 		<string>Randy Newman wins Oscar for &quot;If I Didn&apos;t Have You,&quot; from the Monsters, Inc. soundtrack</string>
@@ -101,7 +90,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Monsters,_Inc.</string>
 	</dict>
-	<key>fact12</key>
 	<dict>
 		<key>event</key>
 		<string>Finding Nemo arrives in theaters</string>
@@ -110,7 +98,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Finding_Nemo</string>
 	</dict>
-	<key>fact13</key>
 	<dict>
 		<key>event</key>
 		<string>The Incredibles is released in theaters and breaks all of Pixar&apos;s box office records its first weekend</string>
@@ -119,7 +106,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/The_Incredibles</string>
 	</dict>
-	<key>fact14</key>
 	<dict>
 		<key>event</key>
 		<string>20th Anniversary of Pixar</string>
@@ -128,7 +114,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Pixar</string>
 	</dict>
-	<key>fact15</key>
 	<dict>
 		<key>event</key>
 		<string>Ratatouille is released in theaters and wins the Oscar for Best Animated Feature</string>
@@ -137,7 +122,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Ratatouille_(film)</string>
 	</dict>
-	<key>fact16</key>
 	<dict>
 		<key>event</key>
 		<string>Wall-E is released accompanied by short film, &quot;Presto&quot;.  Both win Academy Awards.</string>
@@ -146,7 +130,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/WALL-E</string>
 	</dict>
-	<key>fact17</key>
 	<dict>
 		<key>event</key>
 		<string>Up opens the Cannes Film Festival and wins Academy Awards for Best nimated Feater Film and Best Original Score</string>
@@ -155,7 +138,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Up_(2009_film)</string>
 	</dict>
-	<key>fact18</key>
 	<dict>
 		<key>event</key>
 		<string>Toy Story 3 hits theaters and after becomes the highest grossing animated film of all time</string>
@@ -164,7 +146,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Toy_Story_3</string>
 	</dict>
-	<key>fact19</key>
 	<dict>
 		<key>event</key>
 		<string>John Lasseter becomes the first producer of animated films to receive the Producers Guild of America&apos;s David O. Selznick Achievement Award in Motion Pictures</string>
@@ -173,7 +154,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/John_Lasseter</string>
 	</dict>
-	<key>fact20</key>
 	<dict>
 		<key>event</key>
 		<string>Brave is released in theaters and wins Academy Award for Best Animated Feature Film</string>
@@ -182,7 +162,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Brave_(2012_film)</string>
 	</dict>
-	<key>fact21</key>
 	<dict>
 		<key>event</key>
 		<string>Inside Out out arrives in theaters accompanied by short film, &quot;Lava&quot;</string>
@@ -191,7 +170,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Inside_Out_(2015_film)</string>
 	</dict>
-	<key>fact22</key>
 	<dict>
 		<key>event</key>
 		<string>Finding Dory premieres and becomes the highest-grossing animated debut of all time</string>
@@ -200,7 +178,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Finding_Dory</string>
 	</dict>
-	<key>fact23</key>
 	<dict>
 		<key>event</key>
 		<string>Alexander Schure establishes the Computer Graphics Lab out with ambitions for creating the world&apos;s first computer-animated film</string>
@@ -209,7 +186,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Pixar</string>
 	</dict>
-	<key>fact24</key>
 	<dict>
 		<key>event</key>
 		<string>Pixar sells hardware division and switches its focus to animation</string>
@@ -218,7 +194,6 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Pixar</string>
 	</dict>
-	<key>fact25</key>
 	<dict>
 		<key>event</key>
 		<string>Pixar goes public and takes place as the highest IPO of the year</string>
@@ -227,5 +202,5 @@
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Pixar</string>
 	</dict>
-</dict>
+</array>
 </plist>
