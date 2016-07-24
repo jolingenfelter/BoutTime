@@ -138,7 +138,7 @@
                                     <action selector="moveUpOrDown:" destination="b08-N9-RnL" eventType="touchUpInside" id="PiM-3m-vVA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake to complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgF-EE-z6h">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake to complete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgF-EE-z6h">
                                 <rect key="frame" x="113" y="618" width="150" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="AXp-a3-d5c"/>

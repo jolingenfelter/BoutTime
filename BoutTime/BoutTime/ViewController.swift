@@ -62,6 +62,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var downButton3: UIButton!
     @IBOutlet weak var upButton3: UIButton!
     
+    var directionButtons: [UIButton] = []
+    
     //Timer
     @IBOutlet weak var timerLabel: UILabel!
     var timer = NSTimer()
@@ -98,10 +100,21 @@ class ViewController: UIViewController {
             currentRoundEvents.append(newQuizEvents[i])
         }
         
-        event1Label.text = currentRoundEvents[0].event
-        event2Label.text = currentRoundEvents[1].event
-        event3Label.text = currentRoundEvents[2].event
-        event4Label.text = currentRoundEvents[3].event
+        updateLabels()
+    }
+    
+    func checkAnswer(userAnswer: [Event]) {
+        roundsCompleted += 1
+        timer.invalidate()
+        
+        let correctAnswer = currentRoundEvents.sort{$0.year < $1.year}
+        
+        if (userAnswer[0].event == correctAnswer[0].event && userAnswer[1].event == correctAnswer[1].event && userAnswer[2].event == correctAnswer[2].event && userAnswer[3].event == correctAnswer[3].event) {
+            
+            print("You win")
+        
+        }
+        
     }
     
     func newRound() {
@@ -111,21 +124,28 @@ class ViewController: UIViewController {
     @IBAction func moveUpOrDown(sender: UIButton) {
         switch sender.tag {
         case 1:
-            swap(&event1Label.text, &event2Label.text)
+            swap(&currentRoundEvents[0], &currentRoundEvents[1])
         case 2:
-            swap(&event2Label.text, &event1Label.text)
+            swap(&currentRoundEvents[1], &currentRoundEvents[0])
         case 3:
-            swap(&event2Label.text, &event3Label.text)
+            swap(&currentRoundEvents[1], &currentRoundEvents[2])
         case 4:
-            swap(&event3Label.text, &event2Label.text)
+            swap(&currentRoundEvents[2], &currentRoundEvents[1])
         case 5:
-            swap(&event3Label.text, &event4Label.text)
+            swap(&currentRoundEvents[2], &currentRoundEvents[3])
         case 6:
-            swap(&event4Label.text, &event3Label.text)
+            swap(&currentRoundEvents[3], &currentRoundEvents[2])
         default:
             break;
         }
+        updateLabels()
+    }
     
+    func updateLabels() {
+        event1Label.text = currentRoundEvents[0].event
+        event2Label.text = currentRoundEvents[1].event
+        event3Label.text = currentRoundEvents[2].event
+        event4Label.text = currentRoundEvents[3].event
     }
     
     //Timer
@@ -149,6 +169,7 @@ class ViewController: UIViewController {
         if time == 0 {
             timer.invalidate()
             instructions.text = "Time's up!"
+            checkAnswer(currentRoundEvents)
         }
     }
     
@@ -157,6 +178,19 @@ class ViewController: UIViewController {
         timerLabel.text = "0:\(time)"
         timerRunning = false
         timerLabel.textColor = UIColor.whiteColor()
+    }
+    
+    //Button Enabling
+    
+    func enableDirectionButtons(interactionEnabled bool: Bool) {
+        directionButtons = [upButton1, upButton2, upButton3, downButton1, downButton2, downButton3]
+        for button in directionButtons {
+            if bool == true {
+                button.userInteractionEnabled = true
+            } else {
+                button.userInteractionEnabled = false
+            }
+        }
     }
 
 
