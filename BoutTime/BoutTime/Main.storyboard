@@ -234,6 +234,7 @@
                         <outlet property="failButton" destination="isZ-bY-e00" id="1JG-j5-akm"/>
                         <outlet property="instructions" destination="wgF-EE-z6h" id="SVH-wL-Qnf"/>
                         <outlet property="passButton" destination="jXT-1c-n9I" id="YHu-s9-zSy"/>
+                        <outlet property="roundsLabel" destination="OMU-jB-YeQ" id="xa1-hs-PhT"/>
                         <outlet property="timerLabel" destination="tgb-dQ-G2t" id="qNG-Pp-3NO"/>
                         <outlet property="upButton1" destination="5ow-tx-9da" id="N5U-3J-n2x"/>
                         <outlet property="upButton2" destination="Kz7-X7-vZU" id="pmt-9n-5MX"/>

@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     //Game Variables
     var roundsCompleted = 0
     var numberOfCorrectRounds = 0
-    var numberOfRoundsCompleted = 0
+    var roundNumber = 1
     var totalNumberOfRounds = 6
     var indexOfEvent = 0
     var eventsList: [Event] = []
@@ -52,6 +52,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var event3Label: UILabel!
     @IBOutlet weak var event4Label: UILabel!
     @IBOutlet weak var instructions: UILabel!
+    @IBOutlet weak var roundsLabel: UILabel!
     
     
     //Buttons
@@ -129,12 +130,14 @@ class ViewController: UIViewController {
             passButton.hidden = false
             timerLabel.hidden = true
             enableDirectionButtons(interactionEnabled: false)
+            roundNumber += 1
         
         } else {
            
             failButton.hidden = false
             timerLabel.hidden = true
             enableDirectionButtons(interactionEnabled: false)
+            roundNumber += 1
 
         }
         
@@ -145,6 +148,7 @@ class ViewController: UIViewController {
     }
     
     func newRound() {
+        roundsLabel.text = "Round: \(roundNumber)"
         currentRoundEvents.removeAll()
         displayRound(eventsList)
         failButton.hidden = true
