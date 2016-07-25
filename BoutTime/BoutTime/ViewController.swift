@@ -61,6 +61,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var upButton2: UIButton!
     @IBOutlet weak var downButton3: UIButton!
     @IBOutlet weak var upButton3: UIButton!
+    @IBOutlet weak var passButton: UIButton!
+    @IBOutlet weak var failButton: UIButton!
     
     var directionButtons: [UIButton] = []
     
@@ -122,12 +124,17 @@ class ViewController: UIViewController {
         
         if (userAnswer[0].event == correctAnswer[0].event && userAnswer[1].event == correctAnswer[1].event && userAnswer[2].event == correctAnswer[2].event && userAnswer[3].event == correctAnswer[3].event) {
             
-            
+            passButton.hidden = false
         
         } else {
            
+            failButton.hidden = true
         }
         
+    }
+    
+    @IBAction func check(sender: AnyObject) {
+        checkAnswer(currentRoundEvents)
     }
     
     func newRound() {

@@ -158,6 +158,29 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nyh-9U-zep">
+                                <rect key="frame" x="320" y="629" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="check:" destination="b08-N9-RnL" eventType="touchUpInside" id="Q44-Rp-bjR"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isZ-bY-e00">
+                                <rect key="frame" x="98" y="560" width="180" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Fpc-QV-EJv"/>
+                                    <constraint firstAttribute="width" constant="180" id="K1P-sM-JtZ"/>
+                                </constraints>
+                                <state key="normal" title="failButton" image="next_round_fail"/>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXT-1c-n9I">
+                                <rect key="frame" x="98" y="560" width="180" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BZJ-b2-Oqs"/>
+                                    <constraint firstAttribute="width" constant="180" id="TSW-xs-Mp5"/>
+                                </constraints>
+                                <state key="normal" title="passButton" image="next_round_success"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.1647058824" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -166,9 +189,11 @@
                             <constraint firstItem="Kz7-X7-vZU" firstAttribute="top" secondItem="gEJ-A3-e4t" secondAttribute="top" id="Cgd-wk-rP4"/>
                             <constraint firstItem="Kz7-X7-vZU" firstAttribute="leading" secondItem="gEJ-A3-e4t" secondAttribute="trailing" id="J5L-Wg-2zB"/>
                             <constraint firstItem="91e-fu-v4y" firstAttribute="leading" secondItem="f3b-Jf-zaI" secondAttribute="trailing" id="K9j-v3-iCB"/>
+                            <constraint firstItem="isZ-bY-e00" firstAttribute="top" secondItem="f3b-Jf-zaI" secondAttribute="bottom" constant="14" id="KBo-PJ-MAu"/>
                             <constraint firstItem="Y4o-DS-w1Y" firstAttribute="leading" secondItem="8EJ-ra-lcf" secondAttribute="trailing" id="NaR-fs-J9G"/>
                             <constraint firstItem="tgb-dQ-G2t" firstAttribute="top" secondItem="f3b-Jf-zaI" secondAttribute="bottom" constant="22" id="Rx2-H8-f8W"/>
                             <constraint firstItem="5ow-tx-9da" firstAttribute="leading" secondItem="jHu-kT-VId" secondAttribute="trailing" id="Yfg-wb-0eC"/>
+                            <constraint firstItem="isZ-bY-e00" firstAttribute="centerX" secondItem="pWy-CY-L8T" secondAttribute="centerX" id="ZSr-UE-QQN"/>
                             <constraint firstItem="jHu-kT-VId" firstAttribute="top" secondItem="8EJ-ra-lcf" secondAttribute="bottom" constant="25" id="aZo-Lg-ajI"/>
                             <constraint firstItem="5Wi-Fe-mv2" firstAttribute="leading" secondItem="gEJ-A3-e4t" secondAttribute="trailing" id="bHV-jg-vqu"/>
                             <constraint firstItem="8EJ-ra-lcf" firstAttribute="leading" secondItem="pWy-CY-L8T" secondAttribute="leadingMargin" constant="21" id="blk-en-22v"/>
@@ -186,7 +211,9 @@
                             <constraint firstItem="4im-Ls-ane" firstAttribute="leading" secondItem="jHu-kT-VId" secondAttribute="trailing" id="w9G-fe-xgi"/>
                             <constraint firstItem="5Wi-Fe-mv2" firstAttribute="bottom" secondItem="gEJ-A3-e4t" secondAttribute="bottom" id="wTE-jv-deM"/>
                             <constraint firstItem="wgF-EE-z6h" firstAttribute="centerX" secondItem="pWy-CY-L8T" secondAttribute="centerX" id="wUO-uY-Xhw"/>
+                            <constraint firstItem="jXT-1c-n9I" firstAttribute="centerX" secondItem="pWy-CY-L8T" secondAttribute="centerX" id="y52-2e-dAk"/>
                             <constraint firstItem="f3b-Jf-zaI" firstAttribute="leading" secondItem="pWy-CY-L8T" secondAttribute="leadingMargin" constant="21" id="y5y-2k-iHG"/>
+                            <constraint firstItem="jXT-1c-n9I" firstAttribute="top" secondItem="f3b-Jf-zaI" secondAttribute="bottom" constant="14" id="ysg-xC-PsQ"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -198,7 +225,9 @@
                         <outlet property="event2Label" destination="jHu-kT-VId" id="5uo-DO-Wf2"/>
                         <outlet property="event3Label" destination="gEJ-A3-e4t" id="UGI-Uy-Oao"/>
                         <outlet property="event4Label" destination="f3b-Jf-zaI" id="a5Z-L7-L9U"/>
+                        <outlet property="failButton" destination="isZ-bY-e00" id="1JG-j5-akm"/>
                         <outlet property="instructions" destination="wgF-EE-z6h" id="SVH-wL-Qnf"/>
+                        <outlet property="passButton" destination="jXT-1c-n9I" id="YHu-s9-zSy"/>
                         <outlet property="timerLabel" destination="tgb-dQ-G2t" id="qNG-Pp-3NO"/>
                         <outlet property="upButton1" destination="5ow-tx-9da" id="N5U-3J-n2x"/>
                         <outlet property="upButton2" destination="Kz7-X7-vZU" id="pmt-9n-5MX"/>
@@ -207,12 +236,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pq8-S2-bz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="347"/>
+            <point key="canvasLocation" x="123.5" y="346.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="down_full" width="158" height="457"/>
         <image name="down_half" width="158" height="229"/>
+        <image name="next_round_fail" width="558" height="142"/>
+        <image name="next_round_success" width="558" height="142"/>
         <image name="up_full" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
     </resources>
