@@ -85,6 +85,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         newQuizEvents = eventsList.shuffle
         displayRound()
+        
+        //Round corners of Labels
+        let labelsArray = [event1Label, event2Label, event3Label, event4Label]
+        for label in labelsArray {
+            let bounds = label.bounds
+            let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.TopLeft, .BottomLeft], cornerRadii: CGSize(width: 5, height: 5))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = bounds
+            maskLayer.path = maskPath.CGPath
+            label.layer.mask = maskLayer
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -111,8 +122,10 @@ class ViewController: UIViewController {
         
         if (userAnswer[0].event == correctAnswer[0].event && userAnswer[1].event == correctAnswer[1].event && userAnswer[2].event == correctAnswer[2].event && userAnswer[3].event == correctAnswer[3].event) {
             
-            print("You win")
+            
         
+        } else {
+           
         }
         
     }

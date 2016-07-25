@@ -116,6 +116,16 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake to complete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgF-EE-z6h">
+                                <rect key="frame" x="113" y="618" width="150" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="AXp-a3-d5c"/>
+                                    <constraint firstAttribute="width" constant="150" id="r6E-l1-olV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.58323178715436075" blue="0.75988359899328861" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4o-DS-w1Y">
                                 <rect key="frame" x="307" y="71" width="35" height="100"/>
                                 <constraints>
@@ -138,14 +148,14 @@
                                     <action selector="moveUpOrDown:" destination="b08-N9-RnL" eventType="touchUpInside" id="PiM-3m-vVA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake to complete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgF-EE-z6h">
-                                <rect key="frame" x="113" y="618" width="150" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RoundLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMU-jB-YeQ">
+                                <rect key="frame" x="142" y="42" width="91" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="AXp-a3-d5c"/>
-                                    <constraint firstAttribute="width" constant="150" id="r6E-l1-olV"/>
+                                    <constraint firstAttribute="width" constant="91" id="Ibv-Ac-mHW"/>
+                                    <constraint firstAttribute="height" constant="21" id="bkI-dD-bjT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.58323178715436075" blue="0.75988359899328861" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -171,6 +181,8 @@
                             <constraint firstItem="8EJ-ra-lcf" firstAttribute="top" secondItem="rdn-GN-0oI" secondAttribute="bottom" constant="51" id="oja-Ct-Mif"/>
                             <constraint firstItem="jHu-kT-VId" firstAttribute="leading" secondItem="pWy-CY-L8T" secondAttribute="leadingMargin" constant="21" id="tKK-lu-tBv"/>
                             <constraint firstItem="gEJ-A3-e4t" firstAttribute="top" secondItem="jHu-kT-VId" secondAttribute="bottom" constant="25" id="tfd-9g-3iO"/>
+                            <constraint firstItem="OMU-jB-YeQ" firstAttribute="centerX" secondItem="pWy-CY-L8T" secondAttribute="centerX" id="tnW-GQ-bKT"/>
+                            <constraint firstItem="OMU-jB-YeQ" firstAttribute="top" secondItem="rdn-GN-0oI" secondAttribute="bottom" constant="22" id="vVq-6y-PqN"/>
                             <constraint firstItem="4im-Ls-ane" firstAttribute="leading" secondItem="jHu-kT-VId" secondAttribute="trailing" id="w9G-fe-xgi"/>
                             <constraint firstItem="5Wi-Fe-mv2" firstAttribute="bottom" secondItem="gEJ-A3-e4t" secondAttribute="bottom" id="wTE-jv-deM"/>
                             <constraint firstItem="wgF-EE-z6h" firstAttribute="centerX" secondItem="pWy-CY-L8T" secondAttribute="centerX" id="wUO-uY-Xhw"/>
