@@ -125,10 +125,12 @@ class ViewController: UIViewController {
         if (userAnswer[0].event == correctAnswer[0].event && userAnswer[1].event == correctAnswer[1].event && userAnswer[2].event == correctAnswer[2].event && userAnswer[3].event == correctAnswer[3].event) {
             
             passButton.hidden = false
+            timerLabel.hidden = true
         
         } else {
            
-            failButton.hidden = true
+            failButton.hidden = false
+            timerLabel.hidden = true
         }
         
     }
@@ -139,6 +141,22 @@ class ViewController: UIViewController {
     
     func newRound() {
         newQuizEvents.shuffle
+        resetTimerAndButtons()
+        beginTimer()
+        failButton.hidden = true
+        passButton.hidden = true
+        timerLabel.hidden = false
+    }
+    
+    @IBAction func newRoundPressed(sender: UIButton) {
+        switch sender.tag {
+            case 1:
+                newRound()
+            case 2:
+                newRound()
+        default:
+                break;
+        }
     }
     
     @IBAction func moveUpOrDown(sender: UIButton) {

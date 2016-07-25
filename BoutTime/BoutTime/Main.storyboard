@@ -165,21 +165,27 @@
                                     <action selector="check:" destination="b08-N9-RnL" eventType="touchUpInside" id="Q44-Rp-bjR"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isZ-bY-e00">
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isZ-bY-e00">
                                 <rect key="frame" x="98" y="560" width="180" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Fpc-QV-EJv"/>
                                     <constraint firstAttribute="width" constant="180" id="K1P-sM-JtZ"/>
                                 </constraints>
                                 <state key="normal" title="failButton" image="next_round_fail"/>
+                                <connections>
+                                    <action selector="newRoundPressed:" destination="b08-N9-RnL" eventType="touchUpInside" id="bjH-AF-u95"/>
+                                </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXT-1c-n9I">
-                                <rect key="frame" x="98" y="560" width="180" height="50"/>
+                            <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXT-1c-n9I">
+                                <rect key="frame" x="97" y="560" width="180" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BZJ-b2-Oqs"/>
                                     <constraint firstAttribute="width" constant="180" id="TSW-xs-Mp5"/>
                                 </constraints>
                                 <state key="normal" title="passButton" image="next_round_success"/>
+                                <connections>
+                                    <action selector="newRoundPressed:" destination="b08-N9-RnL" eventType="touchUpInside" id="tCe-0S-wys"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.1647058824" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
