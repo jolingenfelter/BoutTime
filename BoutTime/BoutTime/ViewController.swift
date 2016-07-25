@@ -85,8 +85,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        newQuizEvents = eventsList.shuffle
-        displayRound()
+        displayRound(eventsList)
         
         //Round corners of Labels
         let labelsArray = [event1Label, event2Label, event3Label, event4Label]
@@ -105,9 +104,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func displayRound() {
+    func displayRound(array: [Event]) {
         resetTimerAndButtons()
         beginTimer()
+        newQuizEvents = array.shuffle
         
         for i in 0...3 {
             currentRoundEvents.append(newQuizEvents[i])
@@ -140,9 +140,8 @@ class ViewController: UIViewController {
     }
     
     func newRound() {
-        newQuizEvents.shuffle
-        resetTimerAndButtons()
-        beginTimer()
+        currentRoundEvents.removeAll()
+        displayRound(eventsList)
         failButton.hidden = true
         passButton.hidden = true
         timerLabel.hidden = false
