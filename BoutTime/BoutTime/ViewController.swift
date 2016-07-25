@@ -87,6 +87,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         displayRound(eventsList)
         
+        directionButtons = [upButton1, upButton2, upButton3, downButton1, downButton2, downButton3]
+        
         //Round corners of Labels
         let labelsArray = [event1Label, event2Label, event3Label, event4Label]
         for label in labelsArray {
@@ -126,11 +128,14 @@ class ViewController: UIViewController {
             
             passButton.hidden = false
             timerLabel.hidden = true
+            enableDirectionButtons(interactionEnabled: false)
         
         } else {
            
             failButton.hidden = false
             timerLabel.hidden = true
+            enableDirectionButtons(interactionEnabled: false)
+
         }
         
     }
@@ -145,6 +150,7 @@ class ViewController: UIViewController {
         failButton.hidden = true
         passButton.hidden = true
         timerLabel.hidden = false
+        enableDirectionButtons(interactionEnabled: true)
     }
     
     @IBAction func newRoundPressed(sender: UIButton) {
