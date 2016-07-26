@@ -246,7 +246,7 @@
         <!--Web View Controller-->
         <scene sceneID="H20-f3-fOB">
             <objects>
-                <viewController id="VhV-1g-uFs" customClass="WebViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webViewVC" id="VhV-1g-uFs" customClass="WebViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hKh-M3-z8L"/>
                         <viewControllerLayoutGuide type="bottom" id="h22-b0-8lG"/>
@@ -255,7 +255,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lk-eX-Iid" customClass="WebViewController">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lk-eX-Iid">
                                 <rect key="frame" x="-4" y="70" width="383" height="597"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
@@ -277,6 +277,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="webView" destination="3Lk-eX-Iid" id="jgh-bK-DRp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CsP-gX-yPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

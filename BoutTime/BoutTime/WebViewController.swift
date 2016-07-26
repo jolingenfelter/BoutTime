@@ -10,10 +10,16 @@ import UIKit
 
 class WebViewController: UIViewController {
     
-    var wikiUrl = "https://en.wikipedia.org/wiki/HTTP_404"
+    @IBOutlet weak var webView: UIWebView!
+    var url = "https://en.wikipedia.org/wiki/HTTP_404"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let requestURL = NSURL(string: url)
+        let request = NSURLRequest(URL: requestURL!)
+        webView.loadRequest(request)
+        
     }
     
     

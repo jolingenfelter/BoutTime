@@ -74,6 +74,8 @@ class ViewController: UIViewController {
     var time = 60
     var timerRunning = false
     
+    var eventURL = String()
+    
     required init?(coder aDecoder: NSCoder) {
         do {
             let array = try PlistConverter.arrayFromFile("PixarEvents", ofType: "plist")
@@ -229,18 +231,29 @@ class ViewController: UIViewController {
         let touch: UITouch = touches.first!
         
         if touch.view == event1Label {
-            print("touched 1")
+            eventURL = currentRoundEvents[0].url
+            webViewWithURL(eventURL)
             
         } else if touch.view == event2Label {
-            print("touched 2")
+            eventURL = currentRoundEvents[1].url
+            webViewWithURL(eventURL)
             
         } else if touch.view == event3Label {
-            print("touched 3")
+            eventURL = currentRoundEvents[2].url
+            webViewWithURL(eventURL)
             
         } else if touch.view == event4Label {
-            print("touched 4")
+            eventURL = currentRoundEvents[3].url
+            webViewWithURL(eventURL)
             
         }
+        
+    }
+    
+    func webViewWithURL(URL: String) {
+        let webViewController = self.storyboard?.instantiateViewControllerWithIdentifier("webViewVC") as! WebViewController
+        webViewController.url = URL
+        self.presentViewController(webViewController, animated: true, completion: nil)
         
     }
     
