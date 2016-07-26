@@ -243,10 +243,10 @@
             </objects>
             <point key="canvasLocation" x="123.5" y="346.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="H20-f3-fOB">
             <objects>
-                <viewController id="VhV-1g-uFs" sceneMemberID="viewController">
+                <viewController id="VhV-1g-uFs" customClass="WebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hKh-M3-z8L"/>
                         <viewControllerLayoutGuide type="bottom" id="h22-b0-8lG"/>
@@ -255,7 +255,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lk-eX-Iid">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lk-eX-Iid" customClass="WebViewController">
                                 <rect key="frame" x="-4" y="70" width="383" height="597"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>

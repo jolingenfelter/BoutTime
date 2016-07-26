@@ -15,6 +15,7 @@
 		9E0F69681D3FD53900808EDA /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F69671D3FD53900808EDA /* EventsModel.swift */; };
 		9E0F696A1D40003D00808EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0F69691D40003D00808EDA /* Main.storyboard */; };
 		9E5ECC251D46A99A005D40B7 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5ECC241D46A99A005D40B7 /* EndGameViewController.swift */; };
+		9E92511F1D47BFA500FB6483 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E92511E1D47BFA500FB6483 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9E0F69671D3FD53900808EDA /* EventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		9E0F69691D40003D00808EDA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9E5ECC241D46A99A005D40B7 /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
+		9E92511E1D47BFA500FB6483 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				9E0E244D1D3EBB3800D90F16 /* AppDelegate.swift */,
 				9E0E244F1D3EBB3800D90F16 /* ViewController.swift */,
 				9E5ECC241D46A99A005D40B7 /* EndGameViewController.swift */,
+				9E92511E1D47BFA500FB6483 /* WebViewController.swift */,
 				9E0F69691D40003D00808EDA /* Main.storyboard */,
 				9E0E24541D3EBB3800D90F16 /* Assets.xcassets */,
 				9E0E24561D3EBB3800D90F16 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 				9E0E24501D3EBB3800D90F16 /* ViewController.swift in Sources */,
 				9E0F69681D3FD53900808EDA /* EventsModel.swift in Sources */,
 				9E5ECC251D46A99A005D40B7 /* EndGameViewController.swift in Sources */,
+				9E92511F1D47BFA500FB6483 /* WebViewController.swift in Sources */,
 				9E0E244E1D3EBB3800D90F16 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

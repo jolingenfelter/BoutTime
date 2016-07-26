@@ -92,8 +92,8 @@ class ViewController: UIViewController {
         directionButtons = [upButton1, upButton2, upButton3, downButton1, downButton2, downButton3]
         
         //Round corners of Labels
-        let labelsArray = [event1Label, event2Label, event3Label, event4Label]
-        for label in labelsArray {
+        eventLabels = [event1Label, event2Label, event3Label, event4Label]
+        for label in eventLabels {
             let bounds = label.bounds
             let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.TopLeft, .BottomLeft], cornerRadii: CGSize(width: 5, height: 5))
             let maskLayer = CAShapeLayer()
@@ -107,6 +107,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     func displayRound(array: [Event]) {
         resetTimerAndButtons()
@@ -132,16 +133,16 @@ class ViewController: UIViewController {
             passButton.hidden = false
             timerLabel.hidden = true
             enableDirectionButtons(interactionEnabled: false)
-            labelsToInfoButtons(interactionEnabled: true)
             instructions.text = "Tap an Event to find out more"
+            enableLabelInteraction(interactionEnabled: true)
         
         } else {
            
             failButton.hidden = false
             timerLabel.hidden = true
             enableDirectionButtons(interactionEnabled: false)
-            labelsToInfoButtons(interactionEnabled: true)
             instructions.text = "Tap an Event to find out more"
+            enableLabelInteraction(interactionEnabled: true)
 
         }
         
@@ -158,7 +159,7 @@ class ViewController: UIViewController {
             timerLabel.hidden = false
             enableDirectionButtons(interactionEnabled: true)
             instructions.text = "Shake to complete"
-            labelsToInfoButtons(interactionEnabled: false)
+            enableLabelInteraction(interactionEnabled: false)
             
         } else {
             endGame()
@@ -223,25 +224,24 @@ class ViewController: UIViewController {
     
     //TapForMoreInfo
     
-    func labelsToInfoButtons(interactionEnabled bool :Bool) {
-        eventLabels = [event1Label, event2Label, event3Label, event4Label]
-        for label in eventLabels {
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapForMoreInfo))
-            label.addGestureRecognizer(tapGesture)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        let touch: UITouch = touches.first!
+        
+        if touch.view == event1Label {
+            print("touched 1")
+            
+        } else if touch.view == event2Label {
+            print("touched 2")
+            
+        } else if touch.view == event3Label {
+            print("touched 3")
+            
+        } else if touch.view == event4Label {
+            print("touched 4")
+            
         }
-        for label in eventLabels {
-            if bool == true {
-                label.userInteractionEnabled = true
-            } else {
-                label.userInteractionEnabled = false 
-            }
-        }
-    }
-    
-    func tapForMoreInfo(gesture: UITapGestureRecognizer) {
-        if (gesture.state == UIGestureRecognizerState.Ended) {
-            print("event tapped")
-        }
+        
     }
     
     //Timer
@@ -285,6 +285,16 @@ class ViewController: UIViewController {
                 button.userInteractionEnabled = true
             } else {
                 button.userInteractionEnabled = false
+            }
+        }
+    }
+    
+    func enableLabelInteraction(interactionEnabled bool: Bool) {
+        for label in eventLabels {
+            if bool == true {
+                label.userInteractionEnabled = true
+            } else {
+                label.userInteractionEnabled = false
             }
         }
     }
