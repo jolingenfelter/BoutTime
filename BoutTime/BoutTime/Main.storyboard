@@ -243,6 +243,45 @@
             </objects>
             <point key="canvasLocation" x="123.5" y="346.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="H20-f3-fOB">
+            <objects>
+                <viewController id="VhV-1g-uFs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hKh-M3-z8L"/>
+                        <viewControllerLayoutGuide type="bottom" id="h22-b0-8lG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ncO-Oi-tIK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lk-eX-Iid">
+                                <rect key="frame" x="-4" y="70" width="383" height="597"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5D-Ms-bog">
+                                <rect key="frame" x="-4" y="20" width="383" height="51"/>
+                                <state key="normal" title="Button" image="webview_bar"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h22-b0-8lG" firstAttribute="top" secondItem="b5D-Ms-bog" secondAttribute="bottom" constant="596" id="5u2-aI-bqu"/>
+                            <constraint firstItem="b5D-Ms-bog" firstAttribute="leading" secondItem="ncO-Oi-tIK" secondAttribute="leadingMargin" constant="-20" id="CXo-0m-FDR"/>
+                            <constraint firstItem="b5D-Ms-bog" firstAttribute="top" secondItem="hKh-M3-z8L" secondAttribute="bottom" id="MlU-gC-JOA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b5D-Ms-bog" secondAttribute="trailing" constant="-20" id="SuS-Pv-sdh"/>
+                            <constraint firstItem="3Lk-eX-Iid" firstAttribute="top" secondItem="hKh-M3-z8L" secondAttribute="bottom" constant="50" id="Vbx-KG-sRC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Lk-eX-Iid" secondAttribute="trailing" constant="-20" id="ahr-SG-YdN"/>
+                            <constraint firstItem="h22-b0-8lG" firstAttribute="top" secondItem="3Lk-eX-Iid" secondAttribute="bottom" id="cU6-ww-oq7"/>
+                            <constraint firstItem="3Lk-eX-Iid" firstAttribute="leading" secondItem="ncO-Oi-tIK" secondAttribute="leadingMargin" constant="-20" id="vIs-7s-9hX"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CsP-gX-yPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122.5" y="1106.5"/>
+        </scene>
         <!--End Game Controller-->
         <scene sceneID="nFV-eS-AeI">
             <objects>
@@ -315,5 +354,6 @@
         <image name="play_again" width="450" height="142"/>
         <image name="up_full" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
+        <image name="webview_bar" width="1333" height="167"/>
     </resources>
 </document>
