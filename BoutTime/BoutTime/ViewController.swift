@@ -87,7 +87,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         displayRound(eventsList)
-        
+        roundsLabel.text = "Round: \(roundNumber)"
         directionButtons = [upButton1, upButton2, upButton3, downButton1, downButton2, downButton3]
         
         //Round corners of Labels
@@ -127,17 +127,16 @@ class ViewController: UIViewController {
         
         if (userAnswer[0].event == correctAnswer[0].event && userAnswer[1].event == correctAnswer[1].event && userAnswer[2].event == correctAnswer[2].event && userAnswer[3].event == correctAnswer[3].event) {
             
+            numberOfCorrectRounds += 1
             passButton.hidden = false
             timerLabel.hidden = true
             enableDirectionButtons(interactionEnabled: false)
-            roundNumber += 1
         
         } else {
            
             failButton.hidden = false
             timerLabel.hidden = true
             enableDirectionButtons(interactionEnabled: false)
-            roundNumber += 1
 
         }
         
@@ -148,13 +147,19 @@ class ViewController: UIViewController {
     }
     
     func newRound() {
-        roundsLabel.text = "Round: \(roundNumber)"
-        currentRoundEvents.removeAll()
-        displayRound(eventsList)
-        failButton.hidden = true
-        passButton.hidden = true
-        timerLabel.hidden = false
-        enableDirectionButtons(interactionEnabled: true)
+        if roundNumber < 6 {
+            roundNumber += 1
+            roundsLabel.text = "Round: \(roundNumber)"
+            currentRoundEvents.removeAll()
+            displayRound(eventsList)
+            failButton.hidden = true
+            passButton.hidden = true
+            timerLabel.hidden = false
+            enableDirectionButtons(interactionEnabled: true)
+            
+        } else {
+            endGame()
+        }
     }
     
     @IBAction func newRoundPressed(sender: UIButton) {
@@ -186,6 +191,15 @@ class ViewController: UIViewController {
             break;
         }
         updateLabels()
+    }
+    
+    func endGame() {
+        roundNumber == 1
+        roundsLabel.text = "Round: \(roundNumber)"
+        currentRoundEvents.removeAll()
+        
+        let endGameViewController = self.storyboard?.instantiateViewControllerWithIdentifier("endGameVC") as! EndGameController
+        self.presentViewController(endGameViewController, animated: true, completion: nil)
     }
     
     func updateLabels() {

@@ -222,6 +222,7 @@
                             <constraint firstItem="jXT-1c-n9I" firstAttribute="top" secondItem="f3b-Jf-zaI" secondAttribute="bottom" constant="14" id="ysg-xC-PsQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0dM-Mt-z1v"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="downButton1" destination="Y4o-DS-w1Y" id="YWa-wG-IG4"/>
@@ -245,12 +246,73 @@
             </objects>
             <point key="canvasLocation" x="123.5" y="346.5"/>
         </scene>
+        <!--End Game Controller-->
+        <scene sceneID="nFV-eS-AeI">
+            <objects>
+                <viewController storyboardIdentifier="endGameVC" id="bpp-tM-MLz" customClass="EndGameController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ixz-Nm-0Pp"/>
+                        <viewControllerLayoutGuide type="bottom" id="O6y-0g-3rM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lUe-sT-ZHM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VP-Zt-HjI">
+                                <rect key="frame" x="130" y="210" width="115" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="E1j-MS-ZMX"/>
+                                    <constraint firstAttribute="width" constant="115" id="V2q-EX-xvm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.58323178720000002" blue="0.75988359900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8G-xR-zXT">
+                                <rect key="frame" x="146" y="253" width="82" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="kfl-mn-OpK"/>
+                                    <constraint firstAttribute="width" constant="82" id="z2Q-lF-0Xl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tui-dL-cJA">
+                                <rect key="frame" x="113" y="355" width="150" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="HUl-Di-gLz"/>
+                                    <constraint firstAttribute="width" constant="150" id="r6b-wI-Rj0"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="play_again"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.1647058824" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="m8G-xR-zXT" firstAttribute="centerX" secondItem="lUe-sT-ZHM" secondAttribute="centerX" id="0V6-OA-EkX"/>
+                            <constraint firstItem="Tui-dL-cJA" firstAttribute="top" secondItem="m8G-xR-zXT" secondAttribute="bottom" constant="47" id="DRq-Xy-v1s"/>
+                            <constraint firstItem="Tui-dL-cJA" firstAttribute="centerX" secondItem="lUe-sT-ZHM" secondAttribute="centerX" id="E4G-Ze-sDk"/>
+                            <constraint firstItem="3VP-Zt-HjI" firstAttribute="centerX" secondItem="lUe-sT-ZHM" secondAttribute="centerX" id="PuG-YU-ybj"/>
+                            <constraint firstItem="3VP-Zt-HjI" firstAttribute="top" secondItem="ixz-Nm-0Pp" secondAttribute="bottom" constant="190" id="UPT-fO-bxG"/>
+                            <constraint firstItem="m8G-xR-zXT" firstAttribute="top" secondItem="3VP-Zt-HjI" secondAttribute="bottom" constant="5" id="qVc-fe-rSE"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="m8G-xR-zXT" id="IwE-ZD-pWD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CvF-af-HUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="592.5" y="346.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="down_full" width="158" height="457"/>
         <image name="down_half" width="158" height="229"/>
         <image name="next_round_fail" width="558" height="142"/>
         <image name="next_round_success" width="558" height="142"/>
+        <image name="play_again" width="450" height="142"/>
         <image name="up_full" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
     </resources>
