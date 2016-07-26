@@ -22,5 +22,8 @@ class WebViewController: UIViewController {
         
     }
     
+    @IBAction func closeWebView(sender: UIButton) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 }
