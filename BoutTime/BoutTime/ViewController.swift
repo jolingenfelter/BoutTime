@@ -142,10 +142,6 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func check(sender: AnyObject) {
-        checkAnswer(currentRoundEvents)
-    }
-    
     func newRound() {
         if roundNumber < 6 {
             roundNumber += 1
@@ -208,6 +204,14 @@ class ViewController: UIViewController {
         event2Label.text = currentRoundEvents[1].event
         event3Label.text = currentRoundEvents[2].event
         event4Label.text = currentRoundEvents[3].event
+    }
+    
+    //Shake Feature
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            checkAnswer(currentRoundEvents)
+        }
     }
     
     //Timer
