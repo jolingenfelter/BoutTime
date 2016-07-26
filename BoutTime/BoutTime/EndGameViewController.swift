@@ -17,7 +17,7 @@ class EndGameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //scoreLabel.text = "Hello world"
+        scoreLabel.text = score
         
     }
     

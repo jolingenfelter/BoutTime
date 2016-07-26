@@ -199,6 +199,7 @@ class ViewController: UIViewController {
         currentRoundEvents.removeAll()
         
         let endGameViewController = self.storyboard?.instantiateViewControllerWithIdentifier("endGameVC") as! EndGameController
+        endGameViewController.score = "\(numberOfCorrectRounds)/6"
         self.presentViewController(endGameViewController, animated: true, completion: nil)
     }
     
