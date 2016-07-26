@@ -65,6 +65,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var passButton: UIButton!
     @IBOutlet weak var failButton: UIButton!
     
+    var eventLabels: [UILabel] = []
     var directionButtons: [UIButton] = []
     
     //Timer
@@ -131,12 +132,16 @@ class ViewController: UIViewController {
             passButton.hidden = false
             timerLabel.hidden = true
             enableDirectionButtons(interactionEnabled: false)
+            labelsToInfoButtons(interactionEnabled: true)
+            instructions.text = "Tap an Event to find out more"
         
         } else {
            
             failButton.hidden = false
             timerLabel.hidden = true
             enableDirectionButtons(interactionEnabled: false)
+            labelsToInfoButtons(interactionEnabled: true)
+            instructions.text = "Tap an Event to find out more"
 
         }
         
@@ -152,6 +157,8 @@ class ViewController: UIViewController {
             passButton.hidden = true
             timerLabel.hidden = false
             enableDirectionButtons(interactionEnabled: true)
+            instructions.text = "Shake to complete"
+            labelsToInfoButtons(interactionEnabled: false)
             
         } else {
             endGame()
@@ -211,6 +218,29 @@ class ViewController: UIViewController {
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
             checkAnswer(currentRoundEvents)
+        }
+    }
+    
+    //TapForMoreInfo
+    
+    func labelsToInfoButtons(interactionEnabled bool :Bool) {
+        eventLabels = [event1Label, event2Label, event3Label, event4Label]
+        for label in eventLabels {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapForMoreInfo))
+            label.addGestureRecognizer(tapGesture)
+        }
+        for label in eventLabels {
+            if bool == true {
+                label.userInteractionEnabled = true
+            } else {
+                label.userInteractionEnabled = false 
+            }
+        }
+    }
+    
+    func tapForMoreInfo(gesture: UITapGestureRecognizer) {
+        if (gesture.state == UIGestureRecognizerState.Ended) {
+            print("event tapped")
         }
     }
     

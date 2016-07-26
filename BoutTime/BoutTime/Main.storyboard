@@ -21,6 +21,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EJ-ra-lcf">
                                 <rect key="frame" x="37" y="71" width="270" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1c9-fu-H57"/>
                                     <constraint firstAttribute="width" constant="270" id="HX2-On-w3X"/>
@@ -32,6 +33,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHu-kT-VId">
                                 <rect key="frame" x="37" y="196" width="270" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="Exa-co-xAS"/>
                                     <constraint firstAttribute="height" constant="100" id="klC-cv-31r"/>
@@ -43,6 +45,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEJ-A3-e4t">
                                 <rect key="frame" x="37" y="321" width="270" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Che-vY-wp6"/>
                                     <constraint firstAttribute="width" constant="270" id="JzG-Ib-Hqc"/>
@@ -54,6 +57,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event4" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3b-Jf-zaI">
                                 <rect key="frame" x="37" y="446" width="270" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="QFB-UB-K0j"/>
                                     <constraint firstAttribute="width" constant="270" id="pff-dk-MEU"/>
@@ -117,10 +121,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake to complete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgF-EE-z6h">
-                                <rect key="frame" x="113" y="618" width="150" height="25"/>
+                                <rect key="frame" x="-12" y="618" width="400" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="AXp-a3-d5c"/>
-                                    <constraint firstAttribute="width" constant="150" id="r6E-l1-olV"/>
+                                    <constraint firstAttribute="width" constant="400" id="r6E-l1-olV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.58323178715436075" blue="0.75988359899328861" alpha="1" colorSpace="calibratedRGB"/>
