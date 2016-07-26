@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 //Extension to randomize events for each round
 extension Array {
@@ -76,6 +77,10 @@ class ViewController: UIViewController {
     
     var eventURL = String()
     
+    //Sound Effects
+    var correctSound: SystemSoundID = 0
+    var incorrectSound: SystemSoundID = 0
+    
     required init?(coder aDecoder: NSCoder) {
         do {
             let array = try PlistConverter.arrayFromFile("PixarEvents", ofType: "plist")
@@ -89,6 +94,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadSoundCorrectAnswer()
+        loadSoundInCorrectAnswer()
         displayRound(eventsList)
         roundsLabel.text = "Round: \(roundNumber)"
         directionButtons = [upButton1, upButton2, upButton3, downButton1, downButton2, downButton3]
@@ -137,6 +144,7 @@ class ViewController: UIViewController {
             enableDirectionButtons(interactionEnabled: false)
             instructions.text = "Tap an Event to find out more"
             enableLabelInteraction(interactionEnabled: true)
+            playCorrectSound()
         
         } else {
            
@@ -145,6 +153,7 @@ class ViewController: UIViewController {
             enableDirectionButtons(interactionEnabled: false)
             instructions.text = "Tap an Event to find out more"
             enableLabelInteraction(interactionEnabled: true)
+            playIncorrectSound()
 
         }
         
@@ -310,6 +319,28 @@ class ViewController: UIViewController {
                 label.userInteractionEnabled = false
             }
         }
+    }
+    
+    //SoundEffects
+    
+    func loadSoundCorrectAnswer() {
+        let pathToFile = NSBundle.mainBundle().pathForResource("CorrectDing", ofType: "wav")
+        let soundURL = NSURL(fileURLWithPath: pathToFile!)
+        AudioServicesCreateSystemSoundID(soundURL, &correctSound)
+    }
+    
+    func playCorrectSound() {
+        AudioServicesPlaySystemSound(correctSound)
+    }
+    
+    func loadSoundInCorrectAnswer() {
+        let pathToFile = NSBundle.mainBundle().pathForResource("IncorrectBuzz", ofType: "wav")
+        let soundURL = NSURL(fileURLWithPath: pathToFile!)
+        AudioServicesCreateSystemSoundID(soundURL, &incorrectSound)
+    }
+    
+    func playIncorrectSound() {
+        AudioServicesPlaySystemSound(incorrectSound)
     }
 
 

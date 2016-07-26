@@ -16,6 +16,8 @@
 		9E0F696A1D40003D00808EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0F69691D40003D00808EDA /* Main.storyboard */; };
 		9E5ECC251D46A99A005D40B7 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5ECC241D46A99A005D40B7 /* EndGameViewController.swift */; };
 		9E92511F1D47BFA500FB6483 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E92511E1D47BFA500FB6483 /* WebViewController.swift */; };
+		9E9251221D47DA6A00FB6483 /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E9251201D47DA6A00FB6483 /* CorrectDing.wav */; };
+		9E9251231D47DA6A00FB6483 /* IncorrectBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E9251211D47DA6A00FB6483 /* IncorrectBuzz.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		9E0F69691D40003D00808EDA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9E5ECC241D46A99A005D40B7 /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		9E92511E1D47BFA500FB6483 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		9E9251201D47DA6A00FB6483 /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CorrectDing.wav; sourceTree = "<group>"; };
+		9E9251211D47DA6A00FB6483 /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IncorrectBuzz.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				9E0E24591D3EBB3800D90F16 /* Info.plist */,
 				9E0E245F1D3ED8DD00D90F16 /* PixarEvents.plist */,
 				9E0F69671D3FD53900808EDA /* EventsModel.swift */,
+				9E9251201D47DA6A00FB6483 /* CorrectDing.wav */,
+				9E9251211D47DA6A00FB6483 /* IncorrectBuzz.wav */,
 			);
 			path = BoutTime;
 			sourceTree = "<group>";
@@ -134,8 +140,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E9251221D47DA6A00FB6483 /* CorrectDing.wav in Resources */,
 				9E0E24581D3EBB3800D90F16 /* LaunchScreen.storyboard in Resources */,
 				9E0E24551D3EBB3800D90F16 /* Assets.xcassets in Resources */,
+				9E9251231D47DA6A00FB6483 /* IncorrectBuzz.wav in Resources */,
 				9E0E24601D3ED8DD00D90F16 /* PixarEvents.plist in Resources */,
 				9E0F696A1D40003D00808EDA /* Main.storyboard in Resources */,
 			);
