@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AudioToolbox
 
 class SoundCoordinator {
     
@@ -15,7 +16,7 @@ class SoundCoordinator {
     
     init() {
         loadSoundCorrectAnswer()
-        loadSoundInCorrectAnswer
+        loadSoundInCorrectAnswer()
     }
     
     private func loadSoundCorrectAnswer() {
