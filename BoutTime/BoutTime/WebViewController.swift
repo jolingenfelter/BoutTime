@@ -16,14 +16,14 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let requestURL = NSURL(string: url)
-        let request = NSURLRequest(URL: requestURL!)
+        let requestURL = URL(string: url)
+        let request = URLRequest(url: requestURL!)
         webView.loadRequest(request)
         
     }
     
-    @IBAction func closeWebView(sender: UIButton) {
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func closeWebView(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

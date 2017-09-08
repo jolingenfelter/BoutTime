@@ -21,7 +21,7 @@ extension Array {
         }
         return elements
     }
-    func groupOf(n:Int)-> [[Element]] {
+    func groupOf(_ n:Int)-> [[Element]] {
         var result:[[Element]]=[]
         for i in 0...(count/n)-1 {
             var tempArray:[Element] = []
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
     
     //Timer
     @IBOutlet weak var timerLabel: UILabel!
-    var timer = NSTimer()
+    var timer = Timer()
     var time = 60
     var timerRunning = false
     
@@ -104,10 +104,10 @@ class ViewController: UIViewController {
         eventLabels = [event1Label, event2Label, event3Label, event4Label]
         for label in eventLabels {
             let bounds = label.bounds
-            let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.TopLeft, .BottomLeft], cornerRadii: CGSize(width: 5, height: 5))
+            let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.topLeft, .bottomLeft], cornerRadii: CGSize(width: 5, height: 5))
             let maskLayer = CAShapeLayer()
             maskLayer.frame = bounds
-            maskLayer.path = maskPath.CGPath
+            maskLayer.path = maskPath.cgPath
             label.layer.mask = maskLayer
         }
     }
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
     }
 
     
-    func displayRound(array: [Event]) {
+    func displayRound(_ array: [Event]) {
         resetTimerAndButtons()
         beginTimer()
         newQuizEvents = array.shuffle
@@ -130,17 +130,17 @@ class ViewController: UIViewController {
         updateLabels()
     }
     
-    func checkAnswer(userAnswer: [Event]) {
+    func checkAnswer(_ userAnswer: [Event]) {
         roundsCompleted += 1
         timer.invalidate()
         
-        let correctAnswer = currentRoundEvents.sort{$0.year < $1.year}
+        let correctAnswer = currentRoundEvents.sorted{$0.year < $1.year}
         
         if (userAnswer[0].event == correctAnswer[0].event && userAnswer[1].event == correctAnswer[1].event && userAnswer[2].event == correctAnswer[2].event && userAnswer[3].event == correctAnswer[3].event) {
             
             numberOfCorrectRounds += 1
-            passButton.hidden = false
-            timerLabel.hidden = true
+            passButton.isHidden = false
+            timerLabel.isHidden = true
             enableDirectionButtons(interactionEnabled: false)
             instructions.text = "Tap an Event to find out more"
             enableLabelInteraction(interactionEnabled: true)
@@ -148,8 +148,8 @@ class ViewController: UIViewController {
         
         } else {
            
-            failButton.hidden = false
-            timerLabel.hidden = true
+            failButton.isHidden = false
+            timerLabel.isHidden = true
             enableDirectionButtons(interactionEnabled: false)
             instructions.text = "Tap an Event to find out more"
             enableLabelInteraction(interactionEnabled: true)
@@ -165,9 +165,9 @@ class ViewController: UIViewController {
             roundsLabel.text = "Round: \(roundNumber)"
             currentRoundEvents.removeAll()
             displayRound(eventsList)
-            failButton.hidden = true
-            passButton.hidden = true
-            timerLabel.hidden = false
+            failButton.isHidden = true
+            passButton.isHidden = true
+            timerLabel.isHidden = false
             enableDirectionButtons(interactionEnabled: true)
             instructions.text = "Shake to complete"
             enableLabelInteraction(interactionEnabled: false)
@@ -177,7 +177,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func newRoundPressed(sender: UIButton) {
+    @IBAction func newRoundPressed(_ sender: UIButton) {
         switch sender.tag {
             case 1:
                 newRound()
@@ -188,7 +188,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func moveUpOrDown(sender: UIButton) {
+    @IBAction func moveUpOrDown(_ sender: UIButton) {
         switch sender.tag {
         case 1:
             swap(&currentRoundEvents[0], &currentRoundEvents[1])
@@ -213,9 +213,9 @@ class ViewController: UIViewController {
         roundsLabel.text = "Round: \(roundNumber)"
         currentRoundEvents.removeAll()
         
-        let endGameViewController = self.storyboard?.instantiateViewControllerWithIdentifier("endGameVC") as! EndGameController
+        let endGameViewController = self.storyboard?.instantiateViewController(withIdentifier: "endGameVC") as! EndGameController
         endGameViewController.score = "\(numberOfCorrectRounds)/6"
-        self.presentViewController(endGameViewController, animated: true, completion: nil)
+        self.present(endGameViewController, animated: true, completion: nil)
     }
     
     func updateLabels() {
@@ -227,16 +227,16 @@ class ViewController: UIViewController {
     
     //Shake Feature
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        if motion == .MotionShake {
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
             checkAnswer(currentRoundEvents)
         }
     }
     
     //TapForMoreInfo
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         let touch: UITouch = touches.first!
         
         if touch.view == event1Label {
@@ -259,10 +259,10 @@ class ViewController: UIViewController {
         
     }
     
-    func webViewWithURL(URL: String) {
-        let webViewController = self.storyboard?.instantiateViewControllerWithIdentifier("webViewVC") as! WebViewController
+    func webViewWithURL(_ URL: String) {
+        let webViewController = self.storyboard?.instantiateViewController(withIdentifier: "webViewVC") as! WebViewController
         webViewController.url = URL
-        self.presentViewController(webViewController, animated: true, completion: nil)
+        self.present(webViewController, animated: true, completion: nil)
         
     }
     
@@ -270,7 +270,7 @@ class ViewController: UIViewController {
     
     func beginTimer() {
         if timerRunning == false {
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.displayCountDown), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.displayCountDown), userInfo: nil, repeats: true)
             
             timerRunning = true
         }
@@ -281,7 +281,7 @@ class ViewController: UIViewController {
         timerLabel.text = "0:\(time)"
         
         if time <= 5 {
-            timerLabel.textColor = UIColor.redColor()
+            timerLabel.textColor = UIColor.red
         }
         
         if time == 0 {
@@ -295,7 +295,7 @@ class ViewController: UIViewController {
         time = 60
         timerLabel.text = "0:\(time)"
         timerRunning = false
-        timerLabel.textColor = UIColor.whiteColor()
+        timerLabel.textColor = UIColor.white
     }
     
     //Button Enabling
@@ -304,9 +304,9 @@ class ViewController: UIViewController {
         directionButtons = [upButton1, upButton2, upButton3, downButton1, downButton2, downButton3]
         for button in directionButtons {
             if bool == true {
-                button.userInteractionEnabled = true
+                button.isUserInteractionEnabled = true
             } else {
-                button.userInteractionEnabled = false
+                button.isUserInteractionEnabled = false
             }
         }
     }
@@ -314,9 +314,9 @@ class ViewController: UIViewController {
     func enableLabelInteraction(interactionEnabled bool: Bool) {
         for label in eventLabels {
             if bool == true {
-                label.userInteractionEnabled = true
+                label.isUserInteractionEnabled = true
             } else {
-                label.userInteractionEnabled = false
+                label.isUserInteractionEnabled = false
             }
         }
     }
@@ -324,9 +324,9 @@ class ViewController: UIViewController {
     //SoundEffects
     
     func loadSoundCorrectAnswer() {
-        let pathToFile = NSBundle.mainBundle().pathForResource("CorrectDing", ofType: "wav")
-        let soundURL = NSURL(fileURLWithPath: pathToFile!)
-        AudioServicesCreateSystemSoundID(soundURL, &correctSound)
+        let pathToFile = Bundle.main.path(forResource: "CorrectDing", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &correctSound)
     }
     
     func playCorrectSound() {
@@ -334,9 +334,9 @@ class ViewController: UIViewController {
     }
     
     func loadSoundInCorrectAnswer() {
-        let pathToFile = NSBundle.mainBundle().pathForResource("IncorrectBuzz", ofType: "wav")
-        let soundURL = NSURL(fileURLWithPath: pathToFile!)
-        AudioServicesCreateSystemSoundID(soundURL, &incorrectSound)
+        let pathToFile = Bundle.main.path(forResource: "IncorrectBuzz", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &incorrectSound)
     }
     
     func playIncorrectSound() {

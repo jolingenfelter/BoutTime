@@ -18,10 +18,10 @@ struct Event {
 
 // Errors
 
-enum EventError: ErrorType {
-    case InvalidResource
-    case PListConversionError
-    case InvalidKey
+enum EventError: Error {
+    case invalidResource
+    case pListConversionError
+    case invalidKey
 }
 
 
@@ -29,13 +29,13 @@ enum EventError: ErrorType {
 
 class PlistConverter {
     
-    class func arrayFromFile(resource: String, ofType type: String) throws -> [[String: String]] {
-        guard let path = NSBundle.mainBundle().pathForResource(resource, ofType: type) else {
-            throw EventError.InvalidResource
+    class func arrayFromFile(_ resource: String, ofType type: String) throws -> [[String: String]] {
+        guard let path = Bundle.main.path(forResource: resource, ofType: type) else {
+            throw EventError.invalidResource
         }
         
         guard let array = NSArray(contentsOfFile: path), let castArray = array as?[[String : String]] else {
-            throw EventError.PListConversionError
+            throw EventError.pListConversionError
         }
         
         return castArray
@@ -43,7 +43,7 @@ class PlistConverter {
 }
 
 class EventsUnarchiver {
-    class func eventsFromArray(array: [[String : String]]) -> [Event] {
+    class func eventsFromArray(_ array: [[String : String]]) -> [Event] {
         var eventsArray: [Event] = []
         
         for anEvent in array {
