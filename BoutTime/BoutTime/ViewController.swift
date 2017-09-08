@@ -45,9 +45,8 @@ class ViewController: UIViewController {
     
     //Timer
     @IBOutlet weak var timerLabel: UILabel!
-    var timer = Timer()
+    var timer: Timer?
     var time = 60
-    var timerRunning = false
     
     var eventURL = String()
     
@@ -61,9 +60,14 @@ class ViewController: UIViewController {
         } catch let error {
             fatalError("\(error)")
         }
+        
         super.init(coder: aDecoder)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.displayCountDown), userInfo: nil, repeats: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +95,6 @@ class ViewController: UIViewController {
     
     func displayRound(_ array: [Event]) {
         resetTimerAndButtons()
-        beginTimer()
         newQuizEvents = array.shuffle
         
         for i in 0...3 {
@@ -103,7 +106,6 @@ class ViewController: UIViewController {
     
     func checkAnswer(_ userAnswer: [Event]) {
         roundsCompleted += 1
-        timer.invalidate()
         
         let correctAnswer = currentRoundEvents.sorted{$0.year < $1.year}
         
@@ -239,24 +241,19 @@ class ViewController: UIViewController {
     
     //Timer
     
-    func beginTimer() {
-        if timerRunning == false {
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.displayCountDown), userInfo: nil, repeats: true)
-            
-            timerRunning = true
-        }
-    }
-    
     func displayCountDown() {
         time -= 1
         timerLabel.text = "0:\(time)"
+        
+        if time < 10 && time > 0 {
+            timerLabel.text = "0:0\(time)"
+        }
         
         if time <= 5 {
             timerLabel.textColor = UIColor.red
         }
         
         if time == 0 {
-            timer.invalidate()
             instructions.text = "Time's up!"
             checkAnswer(currentRoundEvents)
         }
@@ -265,7 +262,6 @@ class ViewController: UIViewController {
     func resetTimerAndButtons() {
         time = 60
         timerLabel.text = "0:\(time)"
-        timerRunning = false
         timerLabel.textColor = UIColor.white
     }
     
