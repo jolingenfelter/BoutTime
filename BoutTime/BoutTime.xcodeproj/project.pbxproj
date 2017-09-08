@@ -14,6 +14,8 @@
 		9E0E24601D3ED8DD00D90F16 /* PixarEvents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E0E245F1D3ED8DD00D90F16 /* PixarEvents.plist */; };
 		9E0F69681D3FD53900808EDA /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F69671D3FD53900808EDA /* EventsModel.swift */; };
 		9E0F696A1D40003D00808EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0F69691D40003D00808EDA /* Main.storyboard */; };
+		9E51737D1F62F5EA00EAC1AD /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E51737C1F62F5EA00EAC1AD /* ArrayExtension.swift */; };
+		9E51737F1F62F64A00EAC1AD /* SoundCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E51737E1F62F64A00EAC1AD /* SoundCoordinator.swift */; };
 		9E5ECC251D46A99A005D40B7 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5ECC241D46A99A005D40B7 /* EndGameViewController.swift */; };
 		9E92511F1D47BFA500FB6483 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E92511E1D47BFA500FB6483 /* WebViewController.swift */; };
 		9E9251221D47DA6A00FB6483 /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E9251201D47DA6A00FB6483 /* CorrectDing.wav */; };
@@ -30,6 +32,8 @@
 		9E0E245F1D3ED8DD00D90F16 /* PixarEvents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PixarEvents.plist; path = ../PixarEvents.plist; sourceTree = "<group>"; };
 		9E0F69671D3FD53900808EDA /* EventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		9E0F69691D40003D00808EDA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9E51737C1F62F5EA00EAC1AD /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		9E51737E1F62F64A00EAC1AD /* SoundCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCoordinator.swift; sourceTree = "<group>"; };
 		9E5ECC241D46A99A005D40B7 /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		9E92511E1D47BFA500FB6483 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		9E9251201D47DA6A00FB6483 /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CorrectDing.wav; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				9E0E244F1D3EBB3800D90F16 /* ViewController.swift */,
 				9E5ECC241D46A99A005D40B7 /* EndGameViewController.swift */,
 				9E92511E1D47BFA500FB6483 /* WebViewController.swift */,
+				9E51737E1F62F64A00EAC1AD /* SoundCoordinator.swift */,
+				9E51737B1F62F5DB00EAC1AD /* Extensions */,
 				9E0F69691D40003D00808EDA /* Main.storyboard */,
 				9E0E24541D3EBB3800D90F16 /* Assets.xcassets */,
 				9E0E24561D3EBB3800D90F16 /* LaunchScreen.storyboard */,
@@ -80,6 +86,14 @@
 				9E9251211D47DA6A00FB6483 /* IncorrectBuzz.wav */,
 			);
 			path = BoutTime;
+			sourceTree = "<group>";
+		};
+		9E51737B1F62F5DB00EAC1AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9E51737C1F62F5EA00EAC1AD /* ArrayExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +174,9 @@
 				9E0E24501D3EBB3800D90F16 /* ViewController.swift in Sources */,
 				9E0F69681D3FD53900808EDA /* EventsModel.swift in Sources */,
 				9E5ECC251D46A99A005D40B7 /* EndGameViewController.swift in Sources */,
+				9E51737D1F62F5EA00EAC1AD /* ArrayExtension.swift in Sources */,
 				9E92511F1D47BFA500FB6483 /* WebViewController.swift in Sources */,
+				9E51737F1F62F64A00EAC1AD /* SoundCoordinator.swift in Sources */,
 				9E0E244E1D3EBB3800D90F16 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

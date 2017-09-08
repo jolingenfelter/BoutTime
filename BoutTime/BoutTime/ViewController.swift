@@ -9,32 +9,6 @@
 import UIKit
 import AudioToolbox
 
-//Extension to randomize events for each round
-extension Array {
-    var shuffle:[Element] {
-        var elements = self
-        for index in 0..<elements.count {
-            let newIndex = Int(arc4random_uniform(UInt32(elements.count-index)))+index
-            if index != newIndex {
-                swap(&elements[index], &elements[newIndex])
-            }
-        }
-        return elements
-    }
-    func groupOf(_ n:Int)-> [[Element]] {
-        var result:[[Element]]=[]
-        for i in 0...(count/n)-1 {
-            var tempArray:[Element] = []
-            for index in 0...n-1 {
-                tempArray.append(self[index+(i*n)])
-            }
-            result.append(tempArray)
-        }
-        
-        return result
-    }
-}
-
 class ViewController: UIViewController {
     
     //Game Variables
@@ -78,8 +52,7 @@ class ViewController: UIViewController {
     var eventURL = String()
     
     //Sound Effects
-    var correctSound: SystemSoundID = 0
-    var incorrectSound: SystemSoundID = 0
+    let soundCoordinator = SoundCoordinator()
     
     required init?(coder aDecoder: NSCoder) {
         do {
@@ -94,8 +67,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSoundCorrectAnswer()
-        loadSoundInCorrectAnswer()
         displayRound(eventsList)
         roundsLabel.text = "Round: \(roundNumber)"
         directionButtons = [upButton1, upButton2, upButton3, downButton1, downButton2, downButton3]
@@ -144,7 +115,7 @@ class ViewController: UIViewController {
             enableDirectionButtons(interactionEnabled: false)
             instructions.text = "Tap an Event to find out more"
             enableLabelInteraction(interactionEnabled: true)
-            playCorrectSound()
+            soundCoordinator.playCorrectSound()
         
         } else {
            
@@ -153,7 +124,7 @@ class ViewController: UIViewController {
             enableDirectionButtons(interactionEnabled: false)
             instructions.text = "Tap an Event to find out more"
             enableLabelInteraction(interactionEnabled: true)
-            playIncorrectSound()
+            soundCoordinator.playIncorrectSound()
 
         }
         
@@ -320,29 +291,5 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    //SoundEffects
-    
-    func loadSoundCorrectAnswer() {
-        let pathToFile = Bundle.main.path(forResource: "CorrectDing", ofType: "wav")
-        let soundURL = URL(fileURLWithPath: pathToFile!)
-        AudioServicesCreateSystemSoundID(soundURL as CFURL, &correctSound)
-    }
-    
-    func playCorrectSound() {
-        AudioServicesPlaySystemSound(correctSound)
-    }
-    
-    func loadSoundInCorrectAnswer() {
-        let pathToFile = Bundle.main.path(forResource: "IncorrectBuzz", ofType: "wav")
-        let soundURL = URL(fileURLWithPath: pathToFile!)
-        AudioServicesCreateSystemSoundID(soundURL as CFURL, &incorrectSound)
-    }
-    
-    func playIncorrectSound() {
-        AudioServicesPlaySystemSound(incorrectSound)
-    }
-
-
 }
 
