@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum QuizResult {
+    case correct
+    case incorrect
+}
+
 class EventQuiz {
     
     private var eventsArray: [Event]
@@ -42,4 +47,42 @@ class EventQuiz {
         
     }
     
+    func checkAnswer(completion: @escaping (QuizResult) -> Void) {
+        
+        let correctAnswer = quizArray.sorted { $0.year < $1.year }
+        
+        if areEqual(array1: quizArray, array2: correctAnswer) {
+            completion(.correct)
+        } else {
+            completion(.incorrect)
+        }
+        
+    }
+    
+    private func areEqual(array1: [Event], array2: [Event]) -> Bool {
+        
+        if array1.count != array2.count {
+            return false
+        }
+        
+        for i in 0..<array1.count {
+            if array1[i] != array2[i] {
+                return false
+            }
+        }
+        
+        return true
+        
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+

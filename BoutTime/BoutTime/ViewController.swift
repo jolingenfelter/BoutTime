@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     var numberOfCorrectRounds = 0
     var roundNumber = 1
     var totalNumberOfRounds = 6
-    var indexOfEvent = 0
     let eventQuiz = EventQuiz()
     
     //Labels
@@ -85,32 +84,35 @@ class ViewController: UIViewController {
         updateLabels()
     }
     
-    func checkAnswer(_ userAnswer: [Event]) {
+    func checkResponse() {
+        
         roundsCompleted += 1
         
-        let correctAnswer = eventQuiz.quizArray.sorted{$0.year < $1.year}
-        
-        if (userAnswer[0].event == correctAnswer[0].event && userAnswer[1].event == correctAnswer[1].event && userAnswer[2].event == correctAnswer[2].event && userAnswer[3].event == correctAnswer[3].event) {
+        eventQuiz.checkAnswer { (result) in
             
-            numberOfCorrectRounds += 1
-            passButton.isHidden = false
-            timerLabel.isHidden = true
-            enableDirectionButtons(interactionEnabled: false)
-            instructions.text = "Tap an Event to find out more"
-            enableLabelInteraction(interactionEnabled: true)
-            soundCoordinator.playCorrectSound()
-        
-        } else {
-           
-            failButton.isHidden = false
-            timerLabel.isHidden = true
-            enableDirectionButtons(interactionEnabled: false)
-            instructions.text = "Tap an Event to find out more"
-            enableLabelInteraction(interactionEnabled: true)
-            soundCoordinator.playIncorrectSound()
-
+            switch result {
+                
+            case .correct:
+                
+                self.numberOfCorrectRounds += 1
+                self.passButton.isHidden = false
+                self.timerLabel.isHidden = true
+                self.enableDirectionButtons(interactionEnabled: false)
+                self.instructions.text = "Tap an Event to find out more"
+                self.enableLabelInteraction(interactionEnabled: true)
+                self.soundCoordinator.playCorrectSound()
+                
+            case .incorrect:
+                
+                self.failButton.isHidden = false
+                self.timerLabel.isHidden = true
+                self.enableDirectionButtons(interactionEnabled: false)
+                self.instructions.text = "Tap an Event to find out more"
+                self.enableLabelInteraction(interactionEnabled: true)
+                self.soundCoordinator.playIncorrectSound()
+                
+            }
         }
-        
     }
     
     func newRound() {
@@ -183,7 +185,7 @@ class ViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            checkAnswer(eventQuiz.quizArray)
+            checkResponse()
         }
     }
     
@@ -236,7 +238,7 @@ class ViewController: UIViewController {
         
         if time == 0 {
             instructions.text = "Time's up!"
-            checkAnswer(eventQuiz.quizArray)
+            checkResponse()
         }
     }
     

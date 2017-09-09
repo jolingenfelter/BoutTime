@@ -13,3 +13,12 @@ struct Event {
     let year: String
     let url: String
 }
+
+extension Event: Equatable {
+    
+    static func ==(lhs: Event, rhs: Event) -> Bool {
+        return lhs.event == rhs.event
+    }
+    
+}
+
