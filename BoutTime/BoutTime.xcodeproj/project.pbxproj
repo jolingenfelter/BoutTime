@@ -79,9 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				9E0E244D1D3EBB3800D90F16 /* AppDelegate.swift */,
-				9E0E244F1D3EBB3800D90F16 /* ViewController.swift */,
-				9E5ECC241D46A99A005D40B7 /* EndGameViewController.swift */,
-				9E92511E1D47BFA500FB6483 /* WebViewController.swift */,
+				9E89A8611F6480DC00C6CAA3 /* Controllers */,
 				9E5173801F62F71D00EAC1AD /* Models */,
 				9E51737B1F62F5DB00EAC1AD /* Extensions */,
 				9E5173851F62F77C00EAC1AD /* Helpers */,
@@ -122,6 +120,16 @@
 				9E5173881F62F7BE00EAC1AD /* EventsUnarchiver.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9E89A8611F6480DC00C6CAA3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E0E244F1D3EBB3800D90F16 /* ViewController.swift */,
+				9E5ECC241D46A99A005D40B7 /* EndGameViewController.swift */,
+				9E92511E1D47BFA500FB6483 /* WebViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

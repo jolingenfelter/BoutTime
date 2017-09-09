@@ -78,6 +78,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Game
     
     func displayRound(_ array: [Event]) {
         resetTimerAndButtons()
@@ -181,7 +182,7 @@ class ViewController: UIViewController {
         event4Label.text = eventQuiz.quizArray[3].event
     }
     
-    //Shake Feature
+    // MARK: - Shake Feature
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
@@ -189,7 +190,7 @@ class ViewController: UIViewController {
         }
     }
     
-    //TapForMoreInfo
+    //MARK: - TapForMoreInfo
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -218,11 +219,11 @@ class ViewController: UIViewController {
     func webViewWithURL(_ URL: String) {
         let webViewController = self.storyboard?.instantiateViewController(withIdentifier: "webViewVC") as! WebViewController
         webViewController.url = URL
-        self.present(webViewController, animated: true, completion: nil)
-        
+        let navigationController = UINavigationController(rootViewController: webViewController)
+        self.present(navigationController, animated: true, completion: nil)
     }
     
-    //Timer
+    //MARK: - Timer
     
     func displayCountDown() {
         time -= 1
