@@ -57,7 +57,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        displayRound(eventQuiz.quizArray)
+        newRound()
         roundsLabel.text = "Round: \(roundNumber)"
         directionButtons = [upButton1, upButton2, upButton3, downButton1, downButton2, downButton3]
         
@@ -79,11 +79,6 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Game
-    
-    func displayRound(_ array: [Event]) {
-        resetTimerAndButtons()
-        updateLabels()
-    }
     
     func checkResponse() {
         
@@ -121,13 +116,14 @@ class ViewController: UIViewController {
             roundNumber += 1
             roundsLabel.text = "Round: \(roundNumber)"
             eventQuiz.newQuiz()
-            displayRound(eventQuiz.quizArray)
             failButton.isHidden = true
             passButton.isHidden = true
             timerLabel.isHidden = false
             enableDirectionButtons(interactionEnabled: true)
             instructions.text = "Shake to complete"
             enableLabelInteraction(interactionEnabled: false)
+            resetTimerAndButtons()
+            updateLabels()
             
         } else {
             endGame()
