@@ -17,9 +17,7 @@ class ViewController: UIViewController {
     var roundNumber = 1
     var totalNumberOfRounds = 6
     var indexOfEvent = 0
-    var eventsList: [Event] = []
-    var newQuizEvents: [Event] = []
-    var currentRoundEvents: [Event] = []
+    let eventQuiz = EventQuiz()
     
     //Labels
     @IBOutlet weak var event1Label: UILabel!
@@ -53,17 +51,6 @@ class ViewController: UIViewController {
     //Sound Effects
     let soundCoordinator = SoundCoordinator()
     
-    required init?(coder aDecoder: NSCoder) {
-        do {
-            let array = try PlistConverter.arrayFromFile("PixarEvents", ofType: "plist")
-            self.eventsList = EventsUnarchiver.eventsFromArray(array)
-        } catch let error {
-            fatalError("\(error)")
-        }
-        
-        super.init(coder: aDecoder)
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.displayCountDown), userInfo: nil, repeats: true)
@@ -71,7 +58,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        displayRound(eventsList)
+        displayRound(eventQuiz.quizArray)
         roundsLabel.text = "Round: \(roundNumber)"
         directionButtons = [upButton1, upButton2, upButton3, downButton1, downButton2, downButton3]
         
@@ -95,19 +82,13 @@ class ViewController: UIViewController {
     
     func displayRound(_ array: [Event]) {
         resetTimerAndButtons()
-        newQuizEvents = array.shuffle
-        
-        for i in 0...3 {
-            currentRoundEvents.append(newQuizEvents[i])
-        }
-        
         updateLabels()
     }
     
     func checkAnswer(_ userAnswer: [Event]) {
         roundsCompleted += 1
         
-        let correctAnswer = currentRoundEvents.sorted{$0.year < $1.year}
+        let correctAnswer = eventQuiz.quizArray.sorted{$0.year < $1.year}
         
         if (userAnswer[0].event == correctAnswer[0].event && userAnswer[1].event == correctAnswer[1].event && userAnswer[2].event == correctAnswer[2].event && userAnswer[3].event == correctAnswer[3].event) {
             
@@ -136,8 +117,8 @@ class ViewController: UIViewController {
         if roundNumber < 6 {
             roundNumber += 1
             roundsLabel.text = "Round: \(roundNumber)"
-            currentRoundEvents.removeAll()
-            displayRound(eventsList)
+            eventQuiz.newQuiz()
+            displayRound(eventQuiz.quizArray)
             failButton.isHidden = true
             passButton.isHidden = true
             timerLabel.isHidden = false
@@ -162,19 +143,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func moveUpOrDown(_ sender: UIButton) {
+        
         switch sender.tag {
         case 1:
-            swap(&currentRoundEvents[0], &currentRoundEvents[1])
+            swap(&eventQuiz.quizArray[0], &eventQuiz.quizArray[1])
         case 2:
-            swap(&currentRoundEvents[1], &currentRoundEvents[0])
+            swap(&eventQuiz.quizArray[1], &eventQuiz.quizArray[0])
         case 3:
-            swap(&currentRoundEvents[1], &currentRoundEvents[2])
+            swap(&eventQuiz.quizArray[1], &eventQuiz.quizArray[2])
         case 4:
-            swap(&currentRoundEvents[2], &currentRoundEvents[1])
+            swap(&eventQuiz.quizArray[2], &eventQuiz.quizArray[1])
         case 5:
-            swap(&currentRoundEvents[2], &currentRoundEvents[3])
+            swap(&eventQuiz.quizArray[2], &eventQuiz.quizArray[3])
         case 6:
-            swap(&currentRoundEvents[3], &currentRoundEvents[2])
+            swap(&eventQuiz.quizArray[3], &eventQuiz.quizArray[2])
         default:
             break;
         }
@@ -182,9 +164,8 @@ class ViewController: UIViewController {
     }
     
     func endGame() {
-        roundNumber == 1
+        roundNumber = 1
         roundsLabel.text = "Round: \(roundNumber)"
-        currentRoundEvents.removeAll()
         
         let endGameViewController = self.storyboard?.instantiateViewController(withIdentifier: "endGameVC") as! EndGameController
         endGameViewController.score = "\(numberOfCorrectRounds)/6"
@@ -192,17 +173,17 @@ class ViewController: UIViewController {
     }
     
     func updateLabels() {
-        event1Label.text = currentRoundEvents[0].event
-        event2Label.text = currentRoundEvents[1].event
-        event3Label.text = currentRoundEvents[2].event
-        event4Label.text = currentRoundEvents[3].event
+        event1Label.text = eventQuiz.quizArray[0].event
+        event2Label.text = eventQuiz.quizArray[1].event
+        event3Label.text = eventQuiz.quizArray[2].event
+        event4Label.text = eventQuiz.quizArray[3].event
     }
     
     //Shake Feature
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            checkAnswer(currentRoundEvents)
+            checkAnswer(eventQuiz.quizArray)
         }
     }
     
@@ -213,19 +194,19 @@ class ViewController: UIViewController {
         let touch: UITouch = touches.first!
         
         if touch.view == event1Label {
-            eventURL = currentRoundEvents[0].url
+            eventURL = eventQuiz.quizArray[0].url
             webViewWithURL(eventURL)
             
         } else if touch.view == event2Label {
-            eventURL = currentRoundEvents[1].url
+            eventURL = eventQuiz.quizArray[1].url
             webViewWithURL(eventURL)
             
         } else if touch.view == event3Label {
-            eventURL = currentRoundEvents[2].url
+            eventURL = eventQuiz.quizArray[2].url
             webViewWithURL(eventURL)
             
         } else if touch.view == event4Label {
-            eventURL = currentRoundEvents[3].url
+            eventURL = eventQuiz.quizArray[3].url
             webViewWithURL(eventURL)
             
         }
@@ -255,7 +236,7 @@ class ViewController: UIViewController {
         
         if time == 0 {
             instructions.text = "Time's up!"
-            checkAnswer(currentRoundEvents)
+            checkAnswer(eventQuiz.quizArray)
         }
     }
     

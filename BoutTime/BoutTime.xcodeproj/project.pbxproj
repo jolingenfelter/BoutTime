@@ -13,6 +13,7 @@
 		9E0E24581D3EBB3800D90F16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0E24561D3EBB3800D90F16 /* LaunchScreen.storyboard */; };
 		9E0E24601D3ED8DD00D90F16 /* PixarEvents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E0E245F1D3ED8DD00D90F16 /* PixarEvents.plist */; };
 		9E0F696A1D40003D00808EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0F69691D40003D00808EDA /* Main.storyboard */; };
+		9E3F24C61F643B4700DD1B33 /* EventQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F24C51F643B4700DD1B33 /* EventQuiz.swift */; };
 		9E51737D1F62F5EA00EAC1AD /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E51737C1F62F5EA00EAC1AD /* ArrayExtension.swift */; };
 		9E51737F1F62F64A00EAC1AD /* SoundCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E51737E1F62F64A00EAC1AD /* SoundCoordinator.swift */; };
 		9E5173821F62F73700EAC1AD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5173811F62F73700EAC1AD /* Event.swift */; };
@@ -34,6 +35,7 @@
 		9E0E24591D3EBB3800D90F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E0E245F1D3ED8DD00D90F16 /* PixarEvents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PixarEvents.plist; path = ../PixarEvents.plist; sourceTree = "<group>"; };
 		9E0F69691D40003D00808EDA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9E3F24C51F643B4700DD1B33 /* EventQuiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventQuiz.swift; sourceTree = "<group>"; };
 		9E51737C1F62F5EA00EAC1AD /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		9E51737E1F62F64A00EAC1AD /* SoundCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCoordinator.swift; sourceTree = "<group>"; };
 		9E5173811F62F73700EAC1AD /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				9E5173811F62F73700EAC1AD /* Event.swift */,
 				9E5173831F62F75600EAC1AD /* EventError.swift */,
+				9E3F24C51F643B4700DD1B33 /* EventQuiz.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E5173891F62F7BE00EAC1AD /* EventsUnarchiver.swift in Sources */,
+				9E3F24C61F643B4700DD1B33 /* EventQuiz.swift in Sources */,
 				9E5173821F62F73700EAC1AD /* Event.swift in Sources */,
 				9E0E24501D3EBB3800D90F16 /* ViewController.swift in Sources */,
 				9E5173871F62F79900EAC1AD /* plistConverter.swift in Sources */,
