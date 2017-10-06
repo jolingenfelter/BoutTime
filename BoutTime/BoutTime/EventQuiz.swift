@@ -16,7 +16,7 @@ enum QuizResult {
 class EventQuiz {
     
     private var eventsArray: [Event]
-    internal var quizArray: [Event]
+    var quizArray: [Event]
     
     init() {
         

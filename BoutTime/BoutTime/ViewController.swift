@@ -49,6 +49,7 @@ class ViewController: UIViewController {
     
     //Sound Effects
     let soundCoordinator = SoundCoordinator()
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -145,17 +146,17 @@ class ViewController: UIViewController {
         
         switch sender.tag {
         case 1:
-            swap(&eventQuiz.quizArray[0], &eventQuiz.quizArray[1])
+            eventQuiz.quizArray.swapAt(0, 1)
         case 2:
-            swap(&eventQuiz.quizArray[1], &eventQuiz.quizArray[0])
+            eventQuiz.quizArray.swapAt(1, 0)
         case 3:
-            swap(&eventQuiz.quizArray[1], &eventQuiz.quizArray[2])
+            eventQuiz.quizArray.swapAt(1, 2)
         case 4:
-            swap(&eventQuiz.quizArray[2], &eventQuiz.quizArray[1])
+            eventQuiz.quizArray.swapAt(2, 1)
         case 5:
-            swap(&eventQuiz.quizArray[2], &eventQuiz.quizArray[3])
+            eventQuiz.quizArray.swapAt(2, 3)
         case 6:
-            swap(&eventQuiz.quizArray[3], &eventQuiz.quizArray[2])
+            eventQuiz.quizArray.swapAt(3, 2)
         default:
             break;
         }
@@ -221,7 +222,7 @@ class ViewController: UIViewController {
     
     //MARK: - Timer
     
-    func displayCountDown() {
+    @objc func displayCountDown() {
         time -= 1
         timerLabel.text = "0:\(time)"
         
