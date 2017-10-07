@@ -21,10 +21,6 @@ class EndGameController: UIViewController {
         
     }
     
-    
-    
-    
-    
 }
 
 
