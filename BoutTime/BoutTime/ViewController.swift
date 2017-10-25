@@ -85,28 +85,28 @@ class ViewController: UIViewController {
         
         roundsCompleted += 1
         
-        eventQuiz.checkAnswer { (result) in
+        eventQuiz.checkAnswer { [weak self] (result) in
             
             switch result {
                 
             case .correct:
                 
-                self.numberOfCorrectRounds += 1
-                self.passButton.isHidden = false
-                self.timerLabel.isHidden = true
-                self.enableDirectionButtons(interactionEnabled: false)
-                self.instructions.text = "Tap an Event to find out more"
-                self.enableLabelInteraction(interactionEnabled: true)
-                self.soundCoordinator.playCorrectSound()
+                self?.numberOfCorrectRounds += 1
+                self?.passButton.isHidden = false
+                self?.timerLabel.isHidden = true
+                self?.enableDirectionButtons(interactionEnabled: false)
+                self?.instructions.text = "Tap an Event to find out more"
+                self?.enableLabelInteraction(interactionEnabled: true)
+                self?.soundCoordinator.playCorrectSound()
                 
             case .incorrect:
                 
-                self.failButton.isHidden = false
-                self.timerLabel.isHidden = true
-                self.enableDirectionButtons(interactionEnabled: false)
-                self.instructions.text = "Tap an Event to find out more"
-                self.enableLabelInteraction(interactionEnabled: true)
-                self.soundCoordinator.playIncorrectSound()
+                self?.failButton.isHidden = false
+                self?.timerLabel.isHidden = true
+                self?.enableDirectionButtons(interactionEnabled: false)
+                self?.instructions.text = "Tap an Event to find out more"
+                self?.enableLabelInteraction(interactionEnabled: true)
+                self?.soundCoordinator.playIncorrectSound()
                 
             }
         }
